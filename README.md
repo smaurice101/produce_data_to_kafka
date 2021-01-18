@@ -1,7 +1,11 @@
-To produce data to Kafka run the Python code
+To produce data to Kafka run the Python code below
 Pre-requisites: 
 1) MAADS-VIPER
-2) Kafka Cloud account - use Confluent Cloud
+2) Python 3.5+
+3) python libraries
+4) Kafka Cloud account - use Confluent Cloud (https://confluent.cloud/login)
+5) Beginner knowledge of Python, VIPER, Kafka
+
 ```python
 # Developed by: OTICS Advanced Analytics Inc.
 # Date: 2021-01-18 
