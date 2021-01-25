@@ -126,17 +126,7 @@ y = json.loads(result3)
 producetotopic=y['Topic']
 producerid5=y['ProducerId']
 print(producerid5)
-```
 
-    ProducerId-vTXnd4FJqfmBahbLPMjjFxIrvUqR11
-    ProducerId-iq2YUiU6IbIzAOsAlTI95njaaHyWgk
-    ProducerId-GEjx2o7jkfA4aezkEnGCowGlt2yTv0
-    ProducerId-ULfsIr3jwn-I3Gvf7sCMLmULOwNMdl
-    ProducerId-0fa7s8Fojf2Qkv1kDIIF5w1tVxuVVV
-    
-
-
-```python
 #############################################################################################################
 #                                     PRODUCE External Value to TOPIC
 # produce to Topic streams
