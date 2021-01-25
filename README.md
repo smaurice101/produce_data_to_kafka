@@ -14,10 +14,13 @@ Pre-requisites:
 
 # Produce Data to Kafka Cloud
 import maads
+
+# You may need to comment this out if NOT using jupyter notebook
 import nest_asyncio
 import json
 import random
 
+# You may need to comment this out if NOT using jupyter notebook
 nest_asyncio.apply()
 
 # Set Global Host/Port for VIPER - You may change this to fit your configuration
