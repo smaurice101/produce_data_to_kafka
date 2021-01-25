@@ -20,10 +20,6 @@ import random
 
 nest_asyncio.apply()
 
-```
-
-
-```python
 # Set Global Host/Port for VIPER - You may change this to fit your configuration
 VIPERHOST="http://192.168.0.13"
 VIPERPORT=8000
@@ -40,11 +36,7 @@ def getparams():
      return VIPERTOKEN
 
 VIPERTOKEN=getparams()
-#############################################################################################################
-```
 
-
-```python
 #############################################################################################################
 #                                     CREATE TOPICS IN KAFKA
 
@@ -72,11 +64,14 @@ microserviceid=''
 
 description="test data"
 producetotopic="viperdependentvariable"
-result3=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
-y = json.loads(result3)
+try:
+  y = json.loads(result,strict='False')
+except Exception as e:
+  y = json.loads(result)
 producetotopic=y['Topic']
 producerid1=y['ProducerId']
 print(producerid1)
@@ -84,11 +79,14 @@ print(producerid1)
 
 # First Create a topic to produce to
 producetotopic="viperindependentvariable1"
-result3=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
-y = json.loads(result3)
+try:
+  y = json.loads(result,strict='False')
+except Exception as e:
+  y = json.loads(result)
 producetotopic=y['Topic']
 producerid2=y['ProducerId']
 print(producerid2)
@@ -96,33 +94,42 @@ print(producerid2)
 
 # First Create a topic to produce to
 producetotopic="viperindependentvariable2"
-result3=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
-y = json.loads(result3)
+try:
+  y = json.loads(result,strict='False')
+except Exception as e:
+  y = json.loads(result)
 producetotopic=y['Topic']
 producerid3=y['ProducerId']
 print(producerid3)
 
 # First Create a topic to produce to
 producetotopic="textdata1"
-result3=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
-y = json.loads(result3)
+try:
+  y = json.loads(result,strict='False')
+except Exception as e:
+  y = json.loads(result)
 producetotopic=y['Topic']
 producerid4=y['ProducerId']
 print(producerid4)
 
 # First Create a topic to produce to
 producetotopic="textdata2"
-result3=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
-y = json.loads(result3)
+try:
+  y = json.loads(result,strict='False')
+except Exception as e:
+  y = json.loads(result)
 producetotopic=y['Topic']
 producerid5=y['ProducerId']
 print(producerid5)
@@ -153,9 +160,4 @@ for j in range(numberofdatapoints):
     #print(result)
     
     
-```
-
-
-```python
-
 ```
