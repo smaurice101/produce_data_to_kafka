@@ -7,31 +7,26 @@ Pre-requisites:
 5) Beginner knowledge of Python, VIPER, Kafka
 
 ```python
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 # Developed by: OTICS Advanced Analytics Inc.
 # Date: 2021-01-18 
 # Toronto, Ontario Canada
 # For help email: support@otics.ca 
 
 # Produce Data to Kafka Cloud
-import maads
-import nest_asyncio
+import maadstml
+
+# Uncomment IF using Jupyter notebook 
+#import nest_asyncio
+
 import json
 import random
 
-nest_asyncio.apply()
-
-
-# In[5]:
+# Uncomment IF using Jupyter notebook
+#nest_asyncio.apply()
 
 
 # Set Global Host/Port for VIPER - You may change this to fit your configuration
-VIPERHOST="http://192.168.0.14"
+VIPERHOST="http://127.0.0.1"
 VIPERPORT=8000
 
 #############################################################################################################
@@ -40,16 +35,12 @@ VIPERPORT=8000
 # to your location of admin.tok
 def getparams():
         
-     with open("c:/maads/golang/go/bin/admin.tok", "r") as f:
+     with open("c:/viper/admin.tok", "r") as f:
         VIPERTOKEN=f.read()
   
      return VIPERTOKEN
 
 VIPERTOKEN=getparams()
-#############################################################################################################
-
-
-# In[ ]:
 
 
 #############################################################################################################
@@ -79,7 +70,7 @@ microserviceid=''
 
 description="test data"
 producetotopic="viperdependentvariable"
-result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maadstml.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
@@ -95,7 +86,7 @@ print(producerid1)
 
 # First Create a topic to produce to
 producetotopic="viperindependentvariable1"
-result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maadstml.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
@@ -111,7 +102,7 @@ print(producerid2)
 
 # First Create a topic to produce to
 producetotopic="viperindependentvariable2"
-result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maadstml.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
@@ -126,7 +117,7 @@ print(producerid3)
 
 # First Create a topic to produce to
 producetotopic="textdata1"
-result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maadstml.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
@@ -141,7 +132,7 @@ print(producerid4)
 
 # First Create a topic to produce to
 producetotopic="textdata2"
-result=maads.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
+result=maadstml.vipercreatetopic(VIPERTOKEN,VIPERHOST,VIPERPORT,producetotopic,companyname,
                                myname,myemail,mylocation,description,enabletls,
                                brokerhost,brokerport,numpartitions,replication,
                                microserviceid)
@@ -173,14 +164,12 @@ for j in range(numberofdatapoints):
     for t,p in zip(topics,producerids):
       if t!="textdata1" and t!="textdata2":  
         num=str(random.randrange(1000)) 
-        result=maads.viperproducetotopic(VIPERTOKEN,VIPERHOST,VIPERPORT,t,p,1,delay,'','', '',0,num)
+        result=maadstml.viperproducetotopic(VIPERTOKEN,VIPERHOST,VIPERPORT,t,p,1,delay,'','', '',0,num)
       else:
         # write text data
          num1=random.randrange(5)
-         result=maads.viperproducetotopic(VIPERTOKEN,VIPERHOST,VIPERPORT,t,p,1,delay,'','', '',0,tx1[num1])
+         result=maadstml.viperproducetotopic(VIPERTOKEN,VIPERHOST,VIPERPORT,t,p,1,delay,'','', '',0,tx1[num1])
         
         
     #print(result)
-    
-
 ```
