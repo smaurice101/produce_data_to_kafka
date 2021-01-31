@@ -145,6 +145,43 @@ producetotopic=y['Topic']
 producerid5=y['ProducerId']
 print(producerid5)
 
+###########################################################################################################
+#                                        CREATE A CONSUMER GROUP
+#
+topics=["viperdependentvariable","viperindependentvariable1","viperindependentvariable2","textdata1","textdata2"]
+groups=["group-viperdependentvariable","group1-viperindependentvariable1","group-viperindependentvariable2","group-textdata1","group-textdata2"]
+
+topictoconsumefrom="hyper-predictions"
+groupname="hyperprediction-group2"
+
+for topic,group in zip(topics,groups):
+       # Create the consumer groups
+       result=maadstml.vipercreateconsumergroup(VIPERTOKEN,VIPERHOST,VIPERPORT,topic,group,
+                                      companyname,myname,myemail, description,"Toronto",enabletls)
+       print(result) 
+       y = json.loads(result)
+       groupid=y['Groupid']
+       print(groupid)
+
+       # subscribe to topic
+       result=maadstml.vipersubscribeconsumer(VIPERTOKEN,VIPERHOST,VIPERPORT,topic,companyname,
+                                          myname,myemail,mylocation,description,
+                                          brokerhost,brokerport,groupid,microserviceid)
+      
+       # Load result in JSON object and extract the consumer id
+       try:
+        y = json.loads(result,strict='False')
+       except Exception as e:
+        y = json.loads(result)
+       consumerid=y['Consumerid']
+
+       # Consume from group - will cosume latest results in topic 
+       partition=-1
+       delay=1000
+       offset=-1
+       result=maadstml.viperconsumergroupconsumefromtopic(VIPERTOKEN,VIPERHOST,VIPERPORT,topic,consumerid,
+                                                groupid,"OTICS",partition,enabletls,delay,offset)
+       print(result)
 
 
 #############################################################################################################
