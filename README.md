@@ -7,7 +7,8 @@ Pre-requisites:
 5) Beginner knowledge of Python, VIPER, Kafka
 
 ```python
-# Developed by: OTICS Advanced Analytics Inc.
+# Developed by: Sebastian Maurice, PhD
+# Company: OTICS Advanced Analytics Inc.
 # Date: 2021-01-18 
 # Toronto, Ontario Canada
 # For help email: support@otics.ca 
