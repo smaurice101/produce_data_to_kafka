@@ -80,8 +80,8 @@ try:
 except Exception as e:
     y = json.loads(result)
 
-producetotopic=y['Topic']
-producerid1=y['ProducerId']
+producetotopic=y[0]['Topic']
+producerid1=y[0]['ProducerId']
 print(producerid1)
 
 
@@ -96,8 +96,8 @@ try:
 except Exception as e:
     y = json.loads(result)
 
-producetotopic=y['Topic']
-producerid2=y['ProducerId']
+producetotopic=y[0]['Topic']
+producerid2=y[0]['ProducerId']
 print(producerid2)
 
 
@@ -112,8 +112,8 @@ try:
 except Exception as e:
     y = json.loads(result)
 
-producetotopic=y['Topic']
-producerid3=y['ProducerId']
+producetotopic=y[0]['Topic']
+producerid3=y[0]['ProducerId']
 print(producerid3)
 
 # First Create a topic to produce to
@@ -127,8 +127,8 @@ try:
 except Exception as e:
     y = json.loads(result)
 
-producetotopic=y['Topic']
-producerid4=y['ProducerId']
+producetotopic=y[0]['Topic']
+producerid4=y[0]['ProducerId']
 print(producerid4)
 
 # First Create a topic to produce to
@@ -142,8 +142,8 @@ try:
 except Exception as e:
     y = json.loads(result)
 
-producetotopic=y['Topic']
-producerid5=y['ProducerId']
+producetotopic=y[0]['Topic']
+producerid5=y[0]['ProducerId']
 print(producerid5)
 
 
@@ -172,4 +172,5 @@ for j in range(numberofdatapoints):
         
         
     #print(result)
+
 ```
