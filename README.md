@@ -2,7 +2,7 @@ To produce data to Kafka run the Python code below
 Pre-requisites: 
 1) MAADS-VIPER Should be Listening on IP: http://127.0.0.1, and Port: 9000
 2) Python 3.5+
-3) python libraries
+3) MAADSTML python library and others are installed
 4) Kafka Cloud account - use Confluent Cloud (https://confluent.cloud/login)
 5) Beginner knowledge of Python, VIPER, Kafka
 
