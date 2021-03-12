@@ -6,8 +6,7 @@
 
 #######################################################################################################################################
 
-# This file will produce data to a Kafka cluster for Bank Fraud Detection.  Before using this
-# code you MUST have:
+# This file will produce data to a Kafka cluster for Walmart Foot Traffic Predictions and Optimization.  Before using this code you MUST have:
 # 1) Downloaded and installed MAADS-VIPER from: https://github.com/smaurice101/transactionalmachinelearning
 
 # 2) You have VIPER listening for a connection on port IP: http://127.0.01 and PORT: 9001 (you can specify different IP and PORT
