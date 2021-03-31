@@ -15,7 +15,7 @@ Pre-requisites:
 
 #######################################################################################################################################
 
-# This file will produce data to a Kafka cluster for Bank Fraud Detection.  Before using this
+# This file will produce data to a Kafka cluster for Walmart Foot Traffic Predictions and Optimization.  Before using this
 # code you MUST have:
 # 1) Downloaded and installed MAADS-VIPER from: https://github.com/smaurice101/transactionalmachinelearning
 
