@@ -166,9 +166,10 @@ def sendtransactiondata(topiclist,producerids,transactions,j):
 
      # Add a 7000 millisecond maximum delay for VIPER to wait for Kafka to return confirmation message is received and written to topic 
      delay=7000
+     enabletls=1
       
      try:
-        result=maadstml.viperproducetotopic(VIPERTOKEN,VIPERHOST,VIPERPORT,topicbuf,produceridbuf,1,delay,'','', '',0,inputbuf)
+        result=maadstml.viperproducetotopic(VIPERTOKEN,VIPERHOST,VIPERPORT,topicbuf,produceridbuf,enabletls,delay,'','', '',0,inputbuf)
      except Exception as e:
         print(e)
 
